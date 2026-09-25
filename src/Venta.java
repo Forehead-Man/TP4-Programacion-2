@@ -1,21 +1,26 @@
 public class Venta {
     private String fecha;
-    private Factura factura;
-    private Neumatico[] neumaticos;
+    private Neumatico neumatico;
 
-    public Venta(String fecha, Factura factura, Neumatico[] neumaticos) {
+    public Venta(String fecha, Neumatico neumatico){
         this.fecha = fecha;
-        this.factura = factura;
-        this.neumaticos = neumaticos;
-    }
-
-    public Venta(String fecha, Neumatico[] neumaticos){
-        this.fecha = fecha;
-        this.neumaticos = neumaticos;
+        this.neumatico = neumatico;
     }
 
     public void registrarVenta(){
 
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public Neumatico getNeumatico() {
+        return neumatico;
     }
 
 }
