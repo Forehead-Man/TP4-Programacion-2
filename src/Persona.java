@@ -37,4 +37,6 @@ public abstract class Persona {
     public void registrar() {
 
     }
+
+    public abstract void registrar(String fecha, Factura factura, Neumatico[] neumaticos);
 }
