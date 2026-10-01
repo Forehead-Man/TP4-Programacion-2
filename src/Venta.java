@@ -2,7 +2,7 @@ public class Venta {
     private String fecha;
     private Neumatico neumatico;
 
-    public Venta(String fecha, Neumatico neumatico){
+    public Venta(String fecha, Neumatico[] neumatico){
         this.fecha = fecha;
         this.neumatico = neumatico;
     }

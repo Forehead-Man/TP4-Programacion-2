@@ -16,9 +16,8 @@ public class Cliente extends Persona {
         this.compras = compras;
     }
 
-    @Override
-    public void registrar(String fecha, Factura factura, Neumatico[] neumaticos) {
-        this.venta = new Venta(fecha, factura, neumaticos);
+    public void registrarCompra(String fecha, Neumatico[] neumaticos) {
+        this.venta = new Venta(fecha, neumaticos);
         this.compras += 1;
     }
 }

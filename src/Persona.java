@@ -34,9 +34,4 @@ public abstract class Persona {
         this.telefono = telefono;
     }
 
-    public void registrar() {
-
-    }
-
-    public abstract void registrar(String fecha, Factura factura, Neumatico[] neumaticos);
 }

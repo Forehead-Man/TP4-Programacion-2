@@ -17,8 +17,7 @@ public class Empleado extends Persona {
         this.ventas = ventas;
     }
 
-    @Override
-    public void registrar() {
+    public void registrarVenta() {
         this.ventas += 1;
     }
 }
