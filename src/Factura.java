@@ -1,18 +1,30 @@
 public class Factura {
-    private int cantidadCompra;
     private Venta venta;
+    private int numeroFactura;
 
-    public Factura(Venta venta, int cantidadCompra){
+    public Factura(Venta venta, int numeroFactura){
         this.venta = venta;
-        this.cantidadCompra = cantidadCompra;
+        this.numeroFactura = numeroFactura;
     }
 
     public void imprimirFactura(){
         System.out.println("Imprimiendo factura...");
     }
 
-    public float calcularTotal(float iva){
+    public float calcularTotal(){
         Neumatico neumatico = this.venta.getNeumatico();
-        return neumatico.getValorUnitario() * (1 + iva) * this.cantidadCompra;
+        return neumatico.getValorUnitario() * this.venta.getCantidadVendida();
+    }
+
+    public int getNumeroFactura() {
+        return numeroFactura;
+    }
+
+    public Venta getVenta() {
+        return venta;
+    }
+
+    public void setNumeroFactura(int numeroFactura) {
+        this.numeroFactura = numeroFactura;
     }
 }
