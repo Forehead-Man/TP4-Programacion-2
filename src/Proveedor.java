@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Proveedor {
     private String razonSocial;
 
@@ -13,7 +14,10 @@ public class Proveedor {
         this.razonSocial = razonSocial;
     }
 
-    public void enviarPedido(){
-        System.out.println("Enviando pedido...");
+    public int enviarPedido(){
+        Scanner read = new Scanner(System.in);
+        System.out.println("cuentas unidades hay en el pedido?");
+        int cantidad = read.nextInt();
+        return cantidad;
     }
 }

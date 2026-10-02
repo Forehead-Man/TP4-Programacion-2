@@ -54,6 +54,7 @@ public class Neumatico {
     }
 
     public void agregarStock(){
-
+        int cantidad = proveedor.enviarPedido();
+        this.stock = stock + cantidad;
     }
 }
