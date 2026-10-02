@@ -20,11 +20,15 @@ do{
     read.nextLine();
 
     switch (seleccionador){
+        case 0:
+            System.out.println("Saliendo del progama");
+            break;
         case 1:
             System.out.println("Ingrese el nombre del empleado");
             stringAuxiliar1 = read.nextLine();
             System.out.println("ingrese el DNI del empleado");
             intAuxiliar1 = read.nextInt();
+            read.nextLine();
             System.out.println("Ingrese el telefono del empleado");
             stringAuxiliar2 = read.nextLine();
 
