@@ -50,11 +50,31 @@ public class Neumatico {
     }
 
     public void actualizarStock(int cantidad) {
-        this.stock = stock-cantidad;
+        try {
+            if (cantidad < 0) {
+                throw new IllegalArgumentException("Cantidad no puede ser negativa");
+            }
+            if (this.stock < cantidad) {
+                throw new IllegalStateException("Stock insuficiente. Stock actual: " + this.stock + ", cantidad requerida: " + cantidad);
+            }
+            this.stock = stock - cantidad;
+        } catch (IllegalArgumentException | IllegalStateException e) {
+            System.err.println("Error al actualizar stock: " + e.getMessage());
+        }
     }
 
     public void agregarStock(){
-        int cantidad = proveedor.enviarPedido();
-        this.stock = stock + cantidad;
+        try {
+            if (this.proveedor == null) {
+                throw new IllegalStateException("Proveedor no asignado");
+            }
+            int cantidad = proveedor.enviarPedido();
+            if (cantidad < 0) {
+                throw new IllegalArgumentException("Cantidad no puede ser negativa");
+            }
+            this.stock = stock + cantidad;
+        } catch (IllegalStateException | IllegalArgumentException e) {
+            System.err.println("Error al agregar stock: " + e.getMessage());
+        }
     }
 }

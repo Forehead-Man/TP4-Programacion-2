@@ -12,8 +12,19 @@ public class Factura {
     }
 
     public float calcularTotal(){
-        Neumatico neumatico = this.venta.getNeumatico();
-        return neumatico.getValorUnitario() * this.venta.getCantidadVendida();
+        try {
+            if (this.venta == null) {
+                throw new IllegalStateException("Venta no asignada");
+            }
+            Neumatico neumatico = this.venta.getNeumatico();
+            if (neumatico == null) {
+                throw new IllegalStateException("Neumatico no asignado a la venta");
+            }
+            return neumatico.getValorUnitario() * this.venta.getCantidadVendida();
+        } catch (IllegalStateException e) {
+            System.err.println("Error al calcular total: " + e.getMessage());
+            return 0;
+        }
     }
 
     public int getNumeroFactura() {
