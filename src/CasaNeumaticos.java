@@ -1,12 +1,15 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 public class CasaNeumaticos {
 
     private String direccion;
     private ArrayList<Empleado> listaEmpleados;
 
+
     public CasaNeumaticos(String direccion) {
         this.direccion = direccion;
+        this.listaEmpleados = new ArrayList<>();
     }
 
     public String getDireccion() {
@@ -17,12 +20,13 @@ public class CasaNeumaticos {
         this.direccion = direccion;
     }
 
-    public void agregarEmpleado(String nombre, int dni, String telefono, int ventas){
-        Empleado empleado = new Empleado(nombre, dni, telefono, ventas);
+    public void agregarEmpleado(String nombre, int dni, String telefono){
+        Empleado empleado = new Empleado(nombre, dni, telefono);
         listaEmpleados.add(empleado);
+        System.out.println("Agregado con exito");
     }
 
-    public void eliminarEmpleado(Empleado empleado){
+    public void eliminarEmpleado(){
         Scanner read = new Scanner(System.in);
         System.out.println("ingrese el DNI del empleado a eliminar");
         int dniR = read.nextInt();
@@ -33,4 +37,17 @@ public class CasaNeumaticos {
             System.out.println("ese empleado no existe");
         }
     }
+    public void mostrarEmpleados(){
+        Iterator iteratorEmpleados = listaEmpleados.iterator();
+
+        while (iteratorEmpleados.hasNext()){
+            Empleado empleadoActual = (Empleado) iteratorEmpleados.next();
+
+            System.out.println("Nombre:" + empleadoActual.getNombre());
+            System.out.println("DNI:" + empleadoActual.getDni());
+            System.out.println("Telefono:" + empleadoActual.getTelefono());
+
+        }
+    }
+
 }

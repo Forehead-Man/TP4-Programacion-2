@@ -34,4 +34,7 @@ public abstract class Persona {
         this.telefono = telefono;
     }
 
+    public void registrar() {}
+
+    public void registrar(String fecha, Neumatico neumaticos,int cantidadVendida) {}
 }

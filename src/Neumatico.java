@@ -50,7 +50,7 @@ public class Neumatico {
     }
 
     public void actualizarStock(int cantidad) {
-        this.stock -= cantidad;
+        this.stock = stock-cantidad;
     }
 
     public void agregarStock(){

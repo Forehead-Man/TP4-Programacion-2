@@ -1,11 +1,11 @@
 public class Empleado extends Persona {
 
     private int ventas;
-    private Venta venta;
 
-    public Empleado(String nombre, int dni, String telefono, int ventas) {
+
+    public Empleado(String nombre, int dni, String telefono) {
         super(nombre, dni, telefono);
-        this.ventas = ventas;
+        this.ventas = 0;
     }
 
     public int getVentas() {
